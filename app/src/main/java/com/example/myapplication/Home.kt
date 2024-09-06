@@ -8,10 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.myapplication.clase.Proveedor
 
 class Home : AppCompatActivity() {
-    lateinit var btnIvaPro: CardView
-    lateinit var btnProducto: CardView
+    lateinit var btnLimpieza: CardView
+    lateinit var btnProveedor: CardView
+    lateinit var btnCategoria: CardView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -28,18 +30,23 @@ class Home : AppCompatActivity() {
 }
 
 fun cargarR(){
-    btnIvaPro = findViewById(R.id.btnIvaProducto)
-    btnProducto = findViewById(R.id.btnProducto)
+    btnLimpieza = findViewById(R.id.btnProducto)
+    btnProveedor = findViewById(R.id.btnProveerdor)
+    btnCategoria=findViewById(R.id.btnCategoria)
 }
 
 fun estadoBoton(){
-    btnIvaPro.setOnClickListener{
-        val i = Intent(this, MainActivity::class.java)
+    btnLimpieza.setOnClickListener{
+        val i = Intent(this, Productos::class.java)
         startActivity(i)
     }
 
-    btnProducto.setOnClickListener{
-        val i = Intent(this, Productos::class.java)
+    btnProveedor.setOnClickListener{
+        val i = Intent(this, Proveedor::class.java)
+        startActivity(i)
+    }
+    btnCategoria.setOnClickListener{
+        val i = Intent(this, Categoria::class.java)
         startActivity(i)
     }
 }

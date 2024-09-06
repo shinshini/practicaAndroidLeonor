@@ -19,7 +19,7 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:fontFamily="sans-serif-black"
-        android:text="BIENVENIDO {nombre}"
+        android:text="BIENVENIDO "
         android:textSize="35dp"
         android:textAlignment="center"
         tools:ignore="MissingConstraints" />
@@ -44,7 +44,7 @@
         app:rowCount="2">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnIvaProducto"
+            android:id="@+id/btnProducto"
             android:layout_width="0dp"
             android:layout_height="260dp"
             android:layout_marginLeft="16dp"
@@ -80,7 +80,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnProducto"
+            android:id="@+id/btnProveerdor"
             android:layout_width="0dp"
             android:layout_height="258dp"
             android:layout_marginLeft="16dp"
@@ -116,7 +116,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/btnCliente"
+            android:id="@+id/btnCategoria"
             android:layout_width="0dp"
             android:layout_height="266dp"
             android:layout_marginLeft="16dp"
