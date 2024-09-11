@@ -7,11 +7,12 @@
     android:layout_height="match_parent"
 
     tools:context=".Productos">
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="92dp"
+        android:layout_marginTop="16dp"
         android:background="@color/color5"
         android:fontFamily="sans-serif-black"
         android:text="PRODUCTOS"
@@ -23,85 +24,262 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
-    <LinearLayout
-        android:layout_width="346dp"
-        android:layout_height="370dp"
-        android:layout_marginTop="32dp"
-        android:orientation="vertical"
-        android:padding="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="9dp">
 
-        <com.google.android.material.textfield.TextInputLayout
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/black"
-            app:helperText="Ingrese el codigo de producto">
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:ignore="MissingConstraints">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtCodigoProducto"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                android:hint="CODIGO.."
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="173dp"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="@color/black"
+                    app:helperText="Ingrese el codigo de producto">
 
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtCodigoProducto"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:boxStrokeColor="@color/black"
-            app:helperText="Ingrese Nombre del producto">
+                        android:hint="CODIGO.."
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtNombreProd"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="176dp"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="@color/black"
+                    app:helperText="Ingrese Nombre del producto">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNombreProd"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
+
+                        android:hint="Nombre"
+
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                android:hint="Nombre"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="347dp"
+                    android:layout_height="67dp"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeColor="@color/black"
+                    app:helperText="Ingrese el precio de producto">
 
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtPrecio"
+                        android:layout_width="match_parent"
+                        android:layout_height="39dp"
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:boxStrokeColor="@color/black"
-            app:helperText="Ingrese el precio de producto">
+                        android:hint="Precio"
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtPrecio"
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-                android:hint="Precio"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="177dp"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="@color/black"
+                    app:helperText="Ingrese Nombre del Proveedor">>
 
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNombreProvee"
+                        android:layout_width="match_parent"
+                        android:layout_height="45dp"
 
-        <Button
-            android:id="@+id/btnRegistroProducto"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="8dp"
-            android:background="@drawable/caja"
-            android:text="Guardar"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            app:backgroundTint="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
-            tools:ignore="MissingConstraints" />
+                        android:hint="Nombre"
 
-    </LinearLayout>
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeColor="@color/black"
+                    app:helperText="Ingrese NIT">>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNIT"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+
+                        android:hint="NIT"
+
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="176dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeColor="@color/black"
+                    app:helperText="Ingrese la direccion">>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDireccin"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+
+                        android:hint="DIRECCION"
+
+                        android:inputType="textEmailAddress" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnbuscarProveedor"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/caja"
+                    android:text="Buscar Proveedor"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:backgroundTint="@null"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                    tools:ignore="MissingConstraints" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="178dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    app:boxStrokeColor="@color/black"
+                    app:helperText="Ingrese el nombre de categoria">>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtNombrecate"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:hint="Nombre"
+                        android:inputType="textPersonName" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    app:boxStrokeColor="@color/black"
+                    app:helperText="Ingrese la descripcion de categoria">>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtDescripcion"
+                        android:layout_width="match_parent"
+                        android:layout_height="38dp"
+                        android:hint="Descripción"
+                        android:inputType="textMultiLine"
+                        android:lines="5"
+                        android:maxLines="5" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnbuscarCategoria"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/caja"
+                android:text="Buscar Categoria"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                tools:ignore="MissingConstraints" />
+
+            <Button
+                android:id="@+id/btnRegistroProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/caja"
+                android:text="Guardar Todo los Datos"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:backgroundTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                tools:ignore="MissingConstraints" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/listaProductos"
+        android:layout_width="match_parent"
+        android:layout_height="505dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.29"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

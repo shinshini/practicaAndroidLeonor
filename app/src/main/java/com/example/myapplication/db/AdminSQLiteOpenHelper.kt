@@ -15,7 +15,9 @@ class AdminSQLiteOpenHelper(
            "CREATE TABLE productos("+
                    "id_productos INTEGER PRIMARY KEY,"+
                    "nombre TEXT,"+
-                   "precio REAL)"
+                   "precio REAL,"+
+                   "FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor), " +
+                   "FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria))"
        )
 
         db?.execSQL(

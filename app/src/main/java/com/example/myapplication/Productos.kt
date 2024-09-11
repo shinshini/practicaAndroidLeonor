@@ -17,6 +17,8 @@ class Productos : AppCompatActivity() {
     lateinit var  txtnom : EditText
     lateinit var  txtPrecio: EditText
     lateinit var txtcodigo:EditText
+    lateinit var  btnBuscarCate:Button
+    lateinit var  btnBuscarProveedor:Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -34,6 +36,8 @@ class Productos : AppCompatActivity() {
         txtnom=findViewById(R.id.txtNombreProd)
         txtPrecio=findViewById(R.id.txtPrecio)
         txtcodigo=findViewById(R.id.txtCodigoProducto)
+        btnBuscarCate=findViewById(R.id.btnbuscarCategoria)
+        btnBuscarProveedor=findViewById(R.id.btnRegistroProveedor)
     }
     fun estadoBoton(){
         btnRegistrarPro.setOnClickListener{
