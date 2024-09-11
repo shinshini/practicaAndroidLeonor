@@ -1,6 +1,6 @@
 package com.example.myapplication.clase
 
-class Proveedor constructor (codProve:Int,nombre:String,direccion:String,nit:Int){
+class Proveedo constructor (codProve:Int, nombre:String, direccion:String, nit:Int){
 
     private var codProve:Int = codProve
     private var nombre:String = nombre

@@ -41,7 +41,9 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp">
+            android:layout_marginEnd="8dp"
+            app:boxStrokeColor="@color/black"
+            app:helperText="Ingrese el codigo de categoria" >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtCodigo"
@@ -54,10 +56,12 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp">
+            android:layout_marginEnd="8dp"
+            app:boxStrokeColor="@color/black"
+            app:helperText="Ingrese el nombre de categoria" >
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtNombre"
+                android:id="@+id/txtNombrecate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Nombre"
@@ -67,12 +71,14 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp">
+            android:layout_marginEnd="8dp"
+            app:boxStrokeColor="@color/black"
+            app:helperText="Ingrese la descripcion de categoria" >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtDescripcion"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="49dp"
                 android:hint="Descripción"
                 android:inputType="textMultiLine"
                 android:lines="5"
@@ -82,7 +88,7 @@
         <!-- Botón para enviar el formulario -->
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buttonSubmit"
+            android:id="@+id/btncategoria"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"

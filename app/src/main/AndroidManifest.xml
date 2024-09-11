@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MyApplication"
         tools:targetApi="31">
         <activity
+            android:name=".CalcularIVA"
+            android:exported="false" />
+        <activity
             android:name=".Proveedor"
             android:exported="false" />
         <activity

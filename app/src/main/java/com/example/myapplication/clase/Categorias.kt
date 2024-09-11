@@ -1,6 +1,6 @@
 package com.example.myapplication.clase
 
-class Categoria constructor(idcategoria:Int,nombre:String,descripcion:String) {
+class Categorias constructor(idcategoria:Int, nombre:String, descripcion:String) {
     private var nombre:String = nombre
     private var idcategoria:Int = idcategoria
     private var descripcion:String = descripcion

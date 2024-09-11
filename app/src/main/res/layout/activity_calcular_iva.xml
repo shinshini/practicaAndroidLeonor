@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalcularIVA">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="0dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:text="Calcular IVA de producto"
+            android:textSize="25dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fail1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="NOMBRE DE PRODUCTO"
+            app:helperText="Ingrese el nombre del producto">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNombreProducto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/file2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="PRECIO DE PRODUCTO"
+            app:helperText="Ingrese el precio del producto">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPrecioca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnbuscarproducto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/caja"
+            android:fontFamily="sans-serif-black"
+            android:text="Buscar Producto"
+            android:textColor="@color/black"
+            app:backgroundTint="@null" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textProduct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Seleccionar País"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp">
+
+            <Spinner
+                android:id="@+id/spProductos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="?attr/colorControlHighlight"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:spinnerMode="dropdown"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+
+            android:text="LIsta de Paises:"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textPaises"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:hint="Seleccionar País">
+
+            <Spinner
+                android:id="@+id/spPaises"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:backgroundTint="?attr/colorControlHighlight"
+                android:spinnerMode="dropdown"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <Button
+            android:id="@+id/btnCalcularIVA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/caja"
+            app:backgroundTint="@null"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-black"
+            android:text="Calcular" />
+
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listaProductos"
+        android:layout_width="356dp"
+        android:layout_height="732dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+</androidx.constraintlayout.widget.ConstraintLayout>

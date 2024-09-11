@@ -2,18 +2,18 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.myapplication.clase.Proveedor
+import com.example.myapplication.clase.Proveedo
 
 class Home : AppCompatActivity() {
     lateinit var btnLimpieza: CardView
     lateinit var btnProveedor: CardView
     lateinit var btnCategoria: CardView
+    lateinit var  btnCalcularIVA: CardView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,6 +33,7 @@ fun cargarR(){
     btnLimpieza = findViewById(R.id.btnProducto)
     btnProveedor = findViewById(R.id.btnProveerdor)
     btnCategoria=findViewById(R.id.btnCategoria)
+    btnCalcularIVA=findViewById(R.id.btnCalcularIVA)
 }
 
 fun estadoBoton(){
@@ -47,6 +48,10 @@ fun estadoBoton(){
     }
     btnCategoria.setOnClickListener{
         val i = Intent(this, Categoria::class.java)
+        startActivity(i)
+    }
+    btnCalcularIVA.setOnClickListener{
+        val i = Intent(this, CalcularIVA::class.java)
         startActivity(i)
     }
 }
