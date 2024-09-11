@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@drawable/fondo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Home">
@@ -19,6 +20,9 @@
         android:text="BIENVENIDO "
         android:textAlignment="center"
         android:textSize="35sp"
+        android:background="@drawable/caja2"
+        app:backgroundTint="@null"
+        android:textColor="@color/color1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintTop_toTopOf="parent" />
@@ -54,7 +58,10 @@
             android:layout_height="260dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
+            android:background="@drawable/card"
+            app:backgroundTint="@null"
             android:layout_marginBottom="10dp"
+            android:backgroundTint="@color/color3"
             android:foreground="?selectableItemBackground"
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
@@ -64,6 +71,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+
                 android:layout_gravity="center_horizontal|center_vertical"
                 android:orientation="vertical">
 
@@ -79,7 +87,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
+                    android:background="@drawable/card"
                     android:text="Productos"
+
                     android:textAlignment="center" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -92,6 +102,9 @@
             android:layout_marginRight="16dp"
             android:layout_marginBottom="10dp"
             android:foreground="?selectableItemBackground"
+            android:background="@drawable/card"
+            android:backgroundTint="@color/color3"
+            app:backgroundTint="@null"
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
             app:layout_columnWeight="1"
@@ -116,6 +129,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
                     android:text="Proveedor"
+                    android:background="@drawable/card"
                     android:textAlignment="center" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -130,6 +144,7 @@
             android:foreground="?selectableItemBackground"
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
+            android:backgroundTint="@color/color3"
             app:layout_columnWeight="1"
             app:layout_rowWeight="1">
 
@@ -152,6 +167,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
                     android:text="Categoria"
+                    android:background="@drawable/card"
                     android:textAlignment="center" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
@@ -167,6 +183,7 @@
             app:cardCornerRadius="8dp"
             app:cardElevation="6dp"
             app:layout_columnWeight="1"
+            android:backgroundTint="@color/color3"
             app:layout_rowWeight="1">
 
             <LinearLayout
@@ -188,6 +205,7 @@
                     android:layout_height="match_parent"
                     android:layout_centerHorizontal="true"
                     android:text="CalcularIVA"
+                    android:background="@drawable/card"
                     android:textAlignment="center" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
