@@ -6,21 +6,18 @@
     <size android:width="100dp"
         android:height="15dp"/>
 
-    <corners android:radius="35dp" />
+    <corners android:radius="60dp" />
     <gradient
         android:type="linear"
         android:startColor="@color/color9"
         android:endColor="@color/color4"
-        android:angle="60"
+        android:angle="80"
         android:gradientRadius="100dp"/>
 
 
+
     <stroke
-        android:width="0.5dp"
-        android:color="@color/color6"/>
-      <corners android:radius="5dp"/>
-    <stroke
-        android:width="0.2dp"
+        android:width="0.3dp"
         android:color="@color/color2"/><!-- Borde de color café -->
-    <corners android:radius="5dp"/>
+    <corners android:radius="10dp"/>
 </shape>

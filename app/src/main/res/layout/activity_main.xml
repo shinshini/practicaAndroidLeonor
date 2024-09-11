@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo3"
+    android:background="@drawable/fondo"
 
     tools:context=".MainActivity">
 
@@ -53,17 +53,14 @@
             android:id="@+id/textField"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/vector"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/color2"
             android:hint="USUARIO"
-            app:backgroundTint="@null"
             app:helperText="ingrese nombre de usuario">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-
+                android:background="@drawable/vector"
 
                 />
 
@@ -75,22 +72,22 @@
             android:layout_height="wrap_content"
             android:hint="CONTRASEÑA"
             android:layout_marginBottom="10dp"
-            android:textColor="@color/color2"
-            app:backgroundTint="@null"
-            android:background="@drawable/vector"
             app:endIconMode="password_toggle"
             app:helperText="CONSTRASEÑA">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:background="@drawable/vector"
+                android:textColor="@color/color2"
+                app:backgroundTint="@null"/>
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btn_ingresar"
             style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="377dp"
+            android:layout_width="367dp"
             android:layout_height="wrap_content"
             android:background="@drawable/caja"
             android:fontFamily="sans-serif-black"
