@@ -1,12 +1,12 @@
 package com.example.myapplication.clase
 
-class Producto(nombre:String, precio:Double, productos:Int, proveedor: Int, categoria: Int) {
+class Producto(nombre:String, precio:Double, productos:Int, proveedor: String, categoria: String) {
 
     private var nombre:String = nombre
     private var precio:Double = precio
     private var  id_productos:Int = productos
-    private var  id_provee:Int= proveedor
-    private var  id_cate:Int= categoria
+    private var  id_provee:String= proveedor
+    private var  id_cate:String= categoria
 
     //get
     fun getNombre():String{
@@ -18,10 +18,10 @@ class Producto(nombre:String, precio:Double, productos:Int, proveedor: Int, cate
     fun getProductos():Int{
         return id_productos
     }
-    fun getProveedor():Int{
+    fun getProveedor():String{
         return id_provee
     }
-    fun getCategoria():Int{
+    fun getCategoria():String{
         return id_cate
     }
     //set
@@ -34,10 +34,10 @@ class Producto(nombre:String, precio:Double, productos:Int, proveedor: Int, cate
     fun setProductos(productos: Int){
         this.id_productos=productos
     }
-    fun setProveedor(proveedor:Int){
+    fun setProveedor(proveedor:String){
         this.id_provee=proveedor
     }
-    fun setCategoria(categoria:Int){
+    fun setCategoria(categoria:String){
         this.id_cate=categoria
     }
     fun calIVA(iva:Double): Double{

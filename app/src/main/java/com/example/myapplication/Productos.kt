@@ -73,7 +73,7 @@ class Productos : AppCompatActivity() {
 
 
                 // Creamos el objeto Producto
-                val objeto = Producto(txtnom.text.toString(),txtPrecio.text.toString().toDouble(),txtcodigo.text.toString().toInt(),txtnombrecate.text.toString().toInt(), txtnombreprovee.text.toString().toInt())
+                val objeto = Producto(txtnom.text.toString(),txtPrecio.text.toString().toDouble(),txtcodigo.text.toString().toInt(),txtnombrecate.text.toString(), txtnombreprovee.text.toString())
 
 
                 // Insertamos en la base de datos
