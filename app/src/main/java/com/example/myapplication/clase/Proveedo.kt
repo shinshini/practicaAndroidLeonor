@@ -1,14 +1,14 @@
 package com.example.myapplication.clase
 
-class Proveedo constructor (codProve:Int, nombre:String, direccion:String, nit:Int){
+class Proveedo constructor (codProve:String, nombre:String, direccion:String, nit:Int){
 
-    private var codProve:Int = codProve
+    private var codProve:String = codProve
     private var nombre:String = nombre
     private var direccion:String = direccion
     private var nit:Int = nit
 
 
-    fun getCodProvee():Int{
+    fun getCodProvee():String{
         return  codProve
     }
     fun getNombre():String{
@@ -22,7 +22,7 @@ class Proveedo constructor (codProve:Int, nombre:String, direccion:String, nit:I
     }
 
    //set
-   fun setCodProvee(codProve: Int){
+   fun setCodProvee(codProve: String){
        this.codProve= codProve
    }
     fun setNombre(nombre: String){

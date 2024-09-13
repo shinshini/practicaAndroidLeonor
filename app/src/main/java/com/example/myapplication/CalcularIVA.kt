@@ -25,6 +25,7 @@ class CalcularIVA : AppCompatActivity() {
     lateinit var  btnbuscarProducto: Button
     lateinit var  productosList: MutableList<String>
     lateinit var  adapterListView:ArrayAdapter<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -53,7 +54,13 @@ class CalcularIVA : AppCompatActivity() {
     }
     fun estadoBoton(){
         btnCalcular.setOnClickListener(){
-            val laptop = Producto(txtNombre.text.toString(),txtPrecio.text.toString().toDouble(),1)
+            val laptop = Producto(
+                txtNombre.text.toString(),
+                txtPrecio.text.toString().toDouble(),
+                1,
+                0,
+                0
+            )
 
             when(spLista.selectedItem.toString()){
                 "USA"->productosList.add(laptop.getNombre()+", "+laptop.getPrecio()+"  IVA: "+laptop.calIVA(0.03).toString())

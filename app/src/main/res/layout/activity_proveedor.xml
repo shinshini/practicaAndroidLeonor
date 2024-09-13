@@ -91,7 +91,7 @@
             app:helperText="Ingrese la direccion">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/txtDireccin"
+                android:id="@+id/txtDireccionProve"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 

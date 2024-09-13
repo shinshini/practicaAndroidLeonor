@@ -36,7 +36,7 @@ class Proveedor : AppCompatActivity() {
         txtnit=findViewById(R.id.txtNIT)
         txtnom=findViewById(R.id.txtNombreProveedor)
         txtcodigoProvee=findViewById(R.id.txtCodigoProveedor)
-        txtDireccion=findViewById(R.id.txtDireccin)
+        txtDireccion=findViewById(R.id.txtDireccionProve)
 
     }
     fun estadoBoton(){
@@ -45,7 +45,7 @@ class Proveedor : AppCompatActivity() {
             val db = adminsql.writableDatabase
             val registro=ContentValues()
 
-            val objeto = Proveedo(txtcodigoProvee.text.toString().toInt(),txtnom.text.toString(), txtDireccion.text.toString(),txtnit.text.toString().toInt())
+            val objeto = Proveedo(txtcodigoProvee.text.toString(),txtnom.text.toString(), txtDireccion.text.toString(),txtnit.text.toString().toInt())
 
             registro.put("id_proveedor",objeto.getCodProvee())
             registro.put("nombre",objeto.getNombre())

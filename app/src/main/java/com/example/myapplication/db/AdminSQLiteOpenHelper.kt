@@ -16,13 +16,15 @@ class AdminSQLiteOpenHelper(
                    "id_productos INTEGER PRIMARY KEY,"+
                    "nombre TEXT,"+
                    "precio REAL,"+
+                   "id_proveedor INTEGER , " +  // Definimos las claves foráneas
+                   "id_categoria INTEGER , " +
                    "FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor), " +
                    "FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria))"
        )
 
         db?.execSQL(
             "CREATE TABLE categoria("+
-              "id_categoria INTERGER PRIMARY KEY,"+
+              "id_categoria INTEGER PRIMARY KEY,"+
               "nombre TEXT,"+
             "descripcion TEXT)"
         )
@@ -37,11 +39,7 @@ class AdminSQLiteOpenHelper(
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL("DROP TABLE IF EXISTS productos")
-        onCreate(db)
-
         db?.execSQL("DROP TABLE IF EXISTS categoria")
-        onCreate(db)
-
         db?.execSQL("DROP TABLE IF EXISTS proveedor")
         onCreate(db)
     }
