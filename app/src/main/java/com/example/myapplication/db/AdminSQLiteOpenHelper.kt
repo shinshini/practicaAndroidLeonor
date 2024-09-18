@@ -30,7 +30,7 @@ class AdminSQLiteOpenHelper(
         )
         db?.execSQL(
             "CREATE TABLE proveedor("+
-                    "id_proveedor INTEGER PRIMARY KEY,"+
+                    "codigoProvee INTEGER PRIMARY KEY,"+
                     "nombre TEXT,"+
                     "nit INTEGER,"+
                     "direccion TEXT)"

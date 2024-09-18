@@ -31,6 +31,8 @@ class Productos : AppCompatActivity() {
     lateinit var productosList:MutableList<String>
     lateinit var adapterListView:ArrayAdapter<String>
 
+    var codigoProvee:String= null.toString()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -73,7 +75,7 @@ class Productos : AppCompatActivity() {
 
 
                 // Creamos el objeto Producto
-                val objeto = Producto(txtnom.text.toString(),txtPrecio.text.toString().toDouble(),txtcodigo.text.toString().toInt(),txtnombrecate.text.toString().toInt(), txtnombreprovee.text.toString().toInt())
+                val objeto = Producto(txtnom.text.toString(),txtPrecio.text.toString().toDouble(),txtcodigo.text.toString().toInt(),codigoProvee.toString().toInt(), txtnombreprovee.text.toString().toInt())
 
 
                 // Insertamos en la base de datos
@@ -137,11 +139,13 @@ class Productos : AppCompatActivity() {
             val admin=AdminSQLiteOpenHelper(this,"administracion",null,1)
             val bd=admin.writableDatabase
 
-            val fila=bd.rawQuery("select  nombre,nit,direccion from proveedor where id_proveedor=${txtnombreprovee.text.toString().toInt()}",null)
+            val fila=bd.rawQuery("select  codigoProvee,nombre,nit,direccion from proveedor where id_proveedor=${txtnombreprovee.text.toString().toInt()}",null)
             if(fila.moveToFirst()){
-                txtnombreprovee.setText(fila.getString(0))
-                txtnit.setText(fila.getString(1))
-                txtdireccionprovee.setText(fila.getString(2))
+                codigoProvee = fila.getString(0)
+
+                txtnombreprovee.setText(fila.getString(1))
+                txtnit.setText(fila.getString(2))
+                txtdireccionprovee.setText(fila.getString(3))
 
             }else{
                 Toast.makeText(this, "No existe un dicho codigo de proveedor", Toast.LENGTH_SHORT).show()
