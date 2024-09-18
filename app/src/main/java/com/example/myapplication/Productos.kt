@@ -137,7 +137,7 @@ class Productos : AppCompatActivity() {
             val admin=AdminSQLiteOpenHelper(this,"administracion",null,1)
             val bd=admin.writableDatabase
 
-            val fila=bd.rawQuery("select nombre,nit,direccion from proveedor where id_proveedor=${txtnombreprovee.text.toString().toInt()}",null)
+            val fila=bd.rawQuery("select  nombre,nit,direccion from proveedor where id_proveedor=${txtnombreprovee.text.toString().toInt()}",null)
             if(fila.moveToFirst()){
                 txtnombreprovee.setText(fila.getString(0))
                 txtnit.setText(fila.getString(1))
@@ -154,7 +154,7 @@ class Productos : AppCompatActivity() {
 
 
     fun cargarListaProducto(){
-        productosList = mutableListOf("3500")
+        productosList = mutableListOf()
         adapterListView = ArrayAdapter(this, android.R.layout.simple_list_item_1,productosList)
         listProductos.adapter=adapterListView
     }
