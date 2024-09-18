@@ -40,7 +40,7 @@ class Categoria : AppCompatActivity() {
             val adminsql=AdminSQLiteOpenHelper(this,"administracion",null,1)
             val db=adminsql.writableDatabase
             val registro=ContentValues()
-            val objeto= Categorias (txtcodCategoria.text.toString(),txtnom.text.toString(),txtdescripcion.text.toString())
+            val objeto= Categorias (txtcodCategoria.text.toString().toInt(),txtnom.text.toString(),txtdescripcion.text.toString())
 
             registro.put("id_categoria",objeto.getCategoria())
             registro.put("nombre",objeto.getNombre())

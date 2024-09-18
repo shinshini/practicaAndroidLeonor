@@ -1,14 +1,14 @@
 package com.example.myapplication.clase
 
-class Categorias constructor(idcategoria:String, nombre:String, descripcion:String) {
+class Categorias constructor(idcategoria:Int, nombre:String, descripcion:String) {
     private var nombre:String = nombre
-    private var idcategoria:String = idcategoria
+    private var idcategoria:Int = idcategoria
     private var descripcion:String = descripcion
     //get
     fun getNombre():String{
         return  nombre
     }
-    fun getCategoria():String{
+    fun getCategoria():Int{
         return idcategoria
     }
     fun getDescripcion():String{
@@ -18,7 +18,7 @@ class Categorias constructor(idcategoria:String, nombre:String, descripcion:Stri
     fun setNombre(nombre: String){
         this.nombre= nombre
     }
-    fun setCategoria(idcategoria:String){
+    fun setCategoria(idcategoria:Int){
         this.idcategoria=idcategoria
     }
     fun setDescripcion(descripcion:String){

@@ -73,7 +73,7 @@ class Productos : AppCompatActivity() {
 
 
                 // Creamos el objeto Producto
-                val objeto = Producto(txtnom.text.toString(),txtPrecio.text.toString().toDouble(),txtcodigo.text.toString().toInt(),txtnombrecate.text.toString(), txtnombreprovee.text.toString())
+                val objeto = Producto(txtnom.text.toString(),txtPrecio.text.toString().toDouble(),txtcodigo.text.toString().toInt(),txtnombrecate.text.toString().toInt(), txtnombreprovee.text.toString().toInt())
 
 
                 // Insertamos en la base de datos
@@ -91,17 +91,24 @@ class Productos : AppCompatActivity() {
                 txtnom.setText("")
                 txtPrecio.setText("")
                 txtnombrecate.setText(" ")
+                txtnombrecate.setText("")
+                txtddescripcion.setText("")
                 txtnombreprovee.setText("")
+                txtnombreprovee.setText("")
+                txtnit.setText("")
+                txtdireccionprovee.setText("")
 
                 Toast.makeText(this, "Se cargaron los datos del producto", Toast.LENGTH_SHORT).show()
 
                 // Añadimos el nuevo producto a la lista y notificamos al adaptador
                 productosList.add(
-                    "ID: ${objeto.getProductos()} Nombre: ${objeto.getNombre()} Precio: ${objeto.getPrecio()} id_Categoría: ${objeto.getCategoria()} id_Proveedor: ${objeto.getProveedor()}"
+                    "ID: ${objeto.getProductos()}  |   Nombre: ${objeto.getNombre()} |  Precio: ${objeto.getPrecio()}  |  id_Categoría: ${objeto.getCategoria().toInt()}  |  id_Proveedor: ${objeto.getProveedor().toInt()}"
                 )
 
                 // Notificamos al adaptador que los datos han cambiado
                 adapterListView.notifyDataSetChanged()
+                txtnombrecate.setText("")
+                txtnombreprovee.setText("")
 
                 Toast.makeText(this, "Producto registrado", Toast.LENGTH_SHORT).show()
             } catch (e: Exception) {
@@ -115,10 +122,11 @@ class Productos : AppCompatActivity() {
             val admin=AdminSQLiteOpenHelper(this,"administracion",null,1)
             val bd=admin.writableDatabase
 
-            val fila=bd.rawQuery("select nombre,descripcion from categoria where id_categoria=${txtnombrecate.text.toString()}",null)
+            val fila=bd.rawQuery("select nombre,descripcion from categoria where id_categoria=${txtnombrecate.text.toString().toInt()}",null)
             if (fila.moveToFirst()){
                 txtnombrecate.setText(fila.getString(0))
                 txtddescripcion.setText(fila.getString(1))
+
 
             }else
                 Toast.makeText(this,"No existe un dicho codigo de categoria",Toast.LENGTH_SHORT).show()
@@ -129,11 +137,12 @@ class Productos : AppCompatActivity() {
             val admin=AdminSQLiteOpenHelper(this,"administracion",null,1)
             val bd=admin.writableDatabase
 
-            val fila=bd.rawQuery("select nombre,nit,direccion from proveedor where id_proveedor=${txtnombreprovee.text.toString()}",null)
+            val fila=bd.rawQuery("select nombre,nit,direccion from proveedor where id_proveedor=${txtnombreprovee.text.toString().toInt()}",null)
             if(fila.moveToFirst()){
                 txtnombreprovee.setText(fila.getString(0))
                 txtnit.setText(fila.getString(1))
                 txtdireccionprovee.setText(fila.getString(2))
+
             }else{
                 Toast.makeText(this, "No existe un dicho codigo de proveedor", Toast.LENGTH_SHORT).show()
             }

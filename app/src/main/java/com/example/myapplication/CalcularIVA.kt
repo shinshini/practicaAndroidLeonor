@@ -58,8 +58,8 @@ class CalcularIVA : AppCompatActivity() {
                 txtNombre.text.toString(),
                 txtPrecio.text.toString().toDouble(),
                 1,
-                0.toString(),
-                0.toString()
+                0,
+                0
             )
 
             when(spLista.selectedItem.toString()){
