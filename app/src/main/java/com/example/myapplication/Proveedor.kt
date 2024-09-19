@@ -47,16 +47,16 @@ class Proveedor : AppCompatActivity() {
 
             val objeto = Proveedo(txtcodigoProvee.text.toString().toInt(),txtnom.text.toString(), txtDireccion.text.toString(),txtnit.text.toString().toInt())
 
-            registro.put("id_proveedor",objeto.getCodProvee())
+            registro.put("codigoProvee",objeto.getCodProvee())
             registro.put("nombre",objeto.getNombre())
-            registro.put("nit",objeto.getNit())
             registro.put("direccion",objeto.getDireccion())
+            registro.put("nit",objeto.getNit())
             db.insert("proveedor",null,registro)
             db.close()
             txtcodigoProvee.setText("")
             txtnom.setText("")
-            txtnit.setText("")
             txtDireccion.setText("")
+            txtnit.setText("")
             Toast.makeText(this,"Se cargaron los datos del proveedor",Toast.LENGTH_SHORT).show()
         }
     }

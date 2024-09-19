@@ -42,7 +42,7 @@ class Categoria : AppCompatActivity() {
             val registro=ContentValues()
             val objeto= Categorias (txtcodCategoria.text.toString().toInt(),txtnom.text.toString(),txtdescripcion.text.toString())
 
-            registro.put("id_categoria",objeto.getCategoria())
+            registro.put("codigoCate",objeto.getCategoria())
             registro.put("nombre",objeto.getNombre())
             registro.put("descripcion",objeto.getDescripcion())
             db.insert("categoria",null,registro)

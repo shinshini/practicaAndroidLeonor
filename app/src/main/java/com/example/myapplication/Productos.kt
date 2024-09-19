@@ -32,6 +32,7 @@ class Productos : AppCompatActivity() {
     lateinit var adapterListView:ArrayAdapter<String>
 
     var codigoProvee:String= null.toString()
+    var codigoCate:String=null.toString()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,15 +76,15 @@ class Productos : AppCompatActivity() {
 
 
                 // Creamos el objeto Producto
-                val objeto = Producto(txtnom.text.toString(),txtPrecio.text.toString().toDouble(),txtcodigo.text.toString().toInt(),codigoProvee.toString().toInt(), txtnombreprovee.text.toString().toInt())
+                val objeto = Producto(txtnom.text.toString(),txtPrecio.text.toString().toDouble(),txtcodigo.text.toString().toInt(),codigoProvee.toString().toInt(), codigoCate.toString().toInt())
 
 
                 // Insertamos en la base de datos
                 registro.put("id_productos", objeto.getProductos())
                 registro.put("nombre", objeto.getNombre())
                 registro.put("precio", objeto.getPrecio())
-                registro.put("id_categoria", objeto.getCategoria())
                 registro.put("id_proveedor", objeto.getProveedor())
+                registro.put("id_categoria", objeto.getCategoria())
 
                 db.insert("productos", null, registro)
                 db.close()
@@ -124,10 +125,11 @@ class Productos : AppCompatActivity() {
             val admin=AdminSQLiteOpenHelper(this,"administracion",null,1)
             val bd=admin.writableDatabase
 
-            val fila=bd.rawQuery("select nombre,descripcion from categoria where id_categoria=${txtnombrecate.text.toString().toInt()}",null)
+            val fila=bd.rawQuery("select codigoCate,nombre,descripcion from categoria where codigoCate=${txtnombrecate.text.toString().toInt()}",null)
             if (fila.moveToFirst()){
-                txtnombrecate.setText(fila.getString(0))
-                txtddescripcion.setText(fila.getString(1))
+                codigoCate = fila.getString(0)
+                txtnombrecate.setText(fila.getString(1))
+                txtddescripcion.setText(fila.getString(2))
 
 
             }else
@@ -139,7 +141,7 @@ class Productos : AppCompatActivity() {
             val admin=AdminSQLiteOpenHelper(this,"administracion",null,1)
             val bd=admin.writableDatabase
 
-            val fila=bd.rawQuery("select  codigoProvee,nombre,nit,direccion from proveedor where id_proveedor=${txtnombreprovee.text.toString().toInt()}",null)
+            val fila=bd.rawQuery("select  codigoProvee,nombre,nit,direccion from proveedor where codigoProvee=${txtnombreprovee.text.toString().toInt()}",null)
             if(fila.moveToFirst()){
                 codigoProvee = fila.getString(0)
 

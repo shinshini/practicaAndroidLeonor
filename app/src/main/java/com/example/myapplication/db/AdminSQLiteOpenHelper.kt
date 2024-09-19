@@ -18,13 +18,13 @@ class AdminSQLiteOpenHelper(
                    "precio REAL,"+
                    "id_proveedor INTEGER , " +  // Definimos las claves foráneas
                    "id_categoria INTEGER , " +
-                   "FOREIGN KEY (id_proveedor) REFERENCES proveedor(id_proveedor), " +
-                   "FOREIGN KEY (id_categoria) REFERENCES categoria(id_categoria))"
+                   "FOREIGN KEY (id_proveedor) REFERENCES proveedor(codigoProvee), " +
+                   "FOREIGN KEY (id_categoria) REFERENCES categoria(codigoCate))"
        )
 
         db?.execSQL(
             "CREATE TABLE categoria("+
-              "id_categoria INTEGER PRIMARY KEY,"+
+              "codigoCate INTEGER PRIMARY KEY,"+
               "nombre TEXT,"+
             "descripcion TEXT)"
         )
@@ -43,6 +43,9 @@ class AdminSQLiteOpenHelper(
         db?.execSQL("DROP TABLE IF EXISTS proveedor")
         onCreate(db)
     }
-
+    override fun onOpen(db: SQLiteDatabase?) {
+        super.onOpen(db)
+        db?.execSQL("PRAGMA foreign_keys=ON;")  // Habilitar claves foráneas
+    }
 
 }
